@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海市概览</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #495057;
+            padding: 0.5em 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+        nav a:hover {
+            background-color: #343a40;
+        }
+        main {
+            padding: 2em;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            color: #343a40;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5em;
+        }
+        p {
+            line-height: 1.6;
+            margin: 1em 0;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #343a40;
+            color: #fff;
+        }
+        .add-info {
+            background-color: #007bff;
+            color: white;
+            padding: 0.5em;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>上海市概览</h1>
+    </header>
+    <nav>
+        地理地质
+        交通
+        人口
+        联系我
+    </nav>
+    <main>
+        <section id="geography">
+            <h2>地理地质</h2>
+            <p>上海市位于中国东部沿海，是长江三角洲的核心城市。它地处北纬30°40'到31°53'，东经120°51'到122°12'之间。上海市的地势相对平坦，平均海拔约为4米，属于典型的冲积平原地貌。市区内有黄浦江和苏州河两条主要河流，市外有东海、长江口等重要水域。</p >
+            <button class="add-info" onclick="addMoreInfo('geography')">补充信息</button>
+        </section>
+        <section id="transport">
+            <h2>交通</h2>
+            <p>上海拥有完善的交通网络，包括世界上最繁忙的集装箱港口之一——上海港，以及覆盖全市的地铁系统。目前，上海地铁线路长度已超过700公里，是世界上最大的地铁系统之一。此外，上海还有虹桥和浦东两个国际机场，为国内外旅客提供便捷的空中交通服务。</p >
+            <button class="add-info" onclick="addMoreInfo('transport')">补充信息</button>
+        </section>
+        <section id="population">
+            <h2>人口</h2>
+            <p>截至最新统计，上海市总人口超过2400万，是中国人口最多的城市之一。上海人口密度较高，市区人口集中，具有较高的城市化水平。人口结构方面，上海是一个多元化的国际大都市，吸引了大量来自全国各地和世界各国的人口。</p >
+            <button class="add-info" onclick="addMoreInfo('population')">补充信息</button>
+        </section>
+        <section id="contact">
+            <h2>联系我</h2>
+            <p>如有任何问题或需要进一步的信息，请通过以下方式联系我：</p >
+            <p>电子邮箱：</p >
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 上海市概览. 版权所有.</p >
+    </footer>
+    <script>
+        function addMoreInfo(sectionId) {
+            const sections = {
+                geography: "上海的地理地质资源丰富，有丰富的地下水资源和广阔的湿地生态系统。沿海地区受台风和暴雨影响较大，因此在基础设施建设中考虑了防洪和防潮的要求。",
+                transport: "上海不仅拥有便捷的地铁和航空系统，还拥有发达的公交和出租车网络。此外，上海的公路和高速公路系统也非常发达，为市内外的交通提供了便利。",
+                population: "上海的人口年龄结构呈现老龄化趋势，同时外来人口的比例较高，这对城市的社会服务和基础设施提出了更高的要求。上海市政府也在积极应对人口老龄化问题，推出了一系列的社会保障措施。"
+            };
+            const section = document.getElementById(sectionId);
+            const moreInfo = document.createElement('p');
+            moreInfo.innerText = sections[sectionId];
+            section.appendChild(moreInfo);
+        }
+    </script>
+</body>
+</html>
